@@ -1,0 +1,66 @@
+<p>contact works!</p>
+<form [formGroup]="contactForm">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1">Name</div>
+            <div class="col-md-1"> <input type="text" formControlName="Name" autofocus> </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-1">
+                <span *ngIf="contactForm.controls['Name'].touched && contactForm.controls['Name'].invalid">
+                    
+                    <span *ngIf="formControls.Name.errors.required">
+                        *required
+                    </span>
+                <span *ngIf="formControls.Name.errors.pattern">
+                        *invalid
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">Age</div>
+            <div class="col-md-1"> <input type="number" formControlName="Age" [min]="min" [max]="max"> </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-1">
+                <span *ngIf="contactForm.controls['Age'].touched && contactForm.controls['Age'].invalid">
+                    <span *ngIf="formControls.Age.errors.required">
+                        *required
+                    </span>
+                <span *ngIf="formControls.Age.errors.pattern">
+                        *invalid
+                    </span>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">Email</div>
+            <div class="col-md-1"> <input type="text" formControlName="Email"> </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-1">
+                <span *ngIf="contactForm.controls['Email'].touched && contactForm.controls['Email'].invalid">
+                    <span *ngIf="formControls.Email.errors.required">
+                        *required
+                    </span>
+                <span *ngIf="formControls.Email.errors.email">
+                        *invalid
+                    </span>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">Message</div>
+            <div class="col-md-1"> <textarea formControlName="Message" maxlength="255"></textarea> </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,5 @@
+<p>company works!</p>
+
+Enter Parent Value: <input type="text" [(ngModel)]="txtval">
+
+<app-employee [txtval]="txtval" (changeVal)="updatedVal($event)"></app-employee>
